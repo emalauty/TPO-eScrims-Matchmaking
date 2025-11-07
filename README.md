@@ -54,18 +54,9 @@ El proyecto usa Maven para la gestión de dependencias y JavaFX para la GUI.
     * 3. Confirmar Asistencia (Dispara el `ScrimConfirmadoEvent`).
     * **Resultado Esperado:** Un mail con un archivo **`.ics` adjunto** (Patrón Adapter).
 
----
 
-## 💻 Comandos Finales de Git
 
-Si ya creaste el `README.md` en la carpeta raíz de tu proyecto, ejecuta estos comandos en tu terminal para subirlo:
 
-```bash
-# 1. Asegurarse de rastrear todos los archivos nuevos (incluido el README)
-git add .
-
-# 2. Guardar los cambios en el historial local
-git commit -m "docs: Agrega README y finaliza la implementacion del modulo de Perfil Editable."
 
 # 3. Subir la version final a GitHub
 git push origin main 
