@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.escrims.application.MainWindowController">
+
+    <top>
+        <Label text="eScrims - Panel de Control" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="24.0" />
+            </font>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </Label>
+    </top>
+
+    <left>
+        <VBox fx:id="leftPanelVBox" prefWidth="200.0" spacing="10.0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+
+            <Label text="Acciones de Scrim:">
+                <font><Font name="Arial Bold" size="14.0" /></font>
+            </Label>
+
+            <Button fx:id="btnCrearScrim" onAction="#onCrearScrimClicked" text="1. Crear Scrim (Test)" maxWidth="Infinity" />
+            <Button fx:id="btnPostularse" onAction="#onPostularseClicked" text="2. Postularse (Test)" maxWidth="Infinity" />
+            <Button fx:id="btnConfirmar" onAction="#onConfirmarClicked" text="3. Confirmar Asistencia" maxWidth="Infinity" />
+            <Button fx:id="btnIniciar" onAction="#onIniciarClicked" text="4. INICIAR PARTIDA" maxWidth="Infinity" style="-fx-font-weight: bold; -fx-background-color: #aeffb0;" />
+            <Button fx:id="btnFinalizar" onAction="#onFinalizarClicked" text="5. Finalizar Partida" maxWidth="Infinity" />
+
+            <Separator />
+
+            <Label text="Acciones de Moderacion:">
+                <font><Font name="Arial Bold" size="14.0" /></font>
+            </Label>
+            <Button fx:id="btnReportar" onAction="#onReportarClicked" text="Reportar Jugador (Test)" maxWidth="Infinity" style="-fx-background-color: #ffb0b0;" />
+
+            <Separator />
+
+            <Label text="Usuario Logueado:">
+                <font><Font name="Arial Bold" size="14.0" /></font>
+            </Label>
+            <Label fx:id="lblNickname" text="Cargando..." style="-fx-font-weight: bold; -fx-font-size: 14px;">
+                <padding>
+                    <Insets left="10.0" />
+                </padding>
+            </Label>
+            <Button fx:id="btnEditarPerfil" onAction="#onEditarPerfilClicked" text="Editar Perfil" maxWidth="Infinity" />
+
+            <Separator />
+
+            <Label text="Email para Pruebas:">
+                <font><Font name="Arial Bold" size="14.0" /></font>
+            </Label>
+            <TextField fx:id="txtEmailDePrueba" promptText="pone-tu-mail-de-prueba-aca@hotmail.com" />
+
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="5.0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+                <Label text="Scrims Activos:">
+                    <font><Font name="Arial Bold" size="14.0" /></font>
+                </Label>
+                <ListView fx:id="scrimListView" prefHeight="150.0" prefWidth="200.0" VBox.vgrow="NEVER" />
+
+                <Label text="Log de Partida (Simulacion):">
+                    <font><Font name="Arial Bold" size="14.0" /></font>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Label>
+                <TextArea fx:id="logPartidaArea" prefHeight="200.0" prefWidth="200.0" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+
+            </children>
+        </VBox>
+    </center>
+
+    <bottom>
+        <Label fx:id="statusBar" text="Listo." BorderPane.alignment="CENTER_LEFT">
+            <padding>
+                <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+            </padding>
+        </Label>
+    </bottom>
+</BorderPane>
