@@ -3,11 +3,20 @@ package com.escrims.domainCore;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
+<<<<<<< HEAD
+import com.escrims.notificationSubsystem.DomainEventBus; // Import para el evento
+import com.escrims.notificationSubsystem.events.PlazaDisponibleEvent; // Import para el evento
+
+/**
+ * Entidad central y Contexto del Patron State.
+ * ¡AHORA CON LISTA DE ESPERA (SUPLENTES)!
+=======
 
 /**
  * Entidad central y Contexto del Patron State.
  * Esta es la version "inteligente" (Modo Complejo)
  * que chequea el estado antes de actuar.
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
  */
 public class Scrim {
 
@@ -20,7 +29,11 @@ public class Scrim {
     private LocalDateTime fechaHora;
 
     // --- Atributos de Relacion ---
+<<<<<<< HEAD
+    private IScrimState estadoActual;
+=======
     private IScrimState estadoActual; // El estado (etiqueta)
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     private Usuario organizador;
     private List<Equipo> equipos;
     private List<Postulacion> postulaciones;
@@ -29,23 +42,43 @@ public class Scrim {
     private List<ReporteConducta> reportes;
     private List<Rol> rolesObligatorios;
 
+<<<<<<< HEAD
+    // ============================================================
+    // ¡¡NUEVO ATRIBUTO!!
+    // ============================================================
+    private List<Usuario> listaDeEspera; // (Requisito: Sistema de Suplentes)
+    // ============================================================
+
+    // --- Constructor ---
+    public Scrim() {
+        this.estadoActual = new BuscandoState();
+=======
     // --- Constructor ---
     public Scrim() {
         this.estadoActual = new BuscandoState();
         // Inicializar listas para evitar NullPointerExceptions
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
         this.equipos = new ArrayList<>();
         this.postulaciones = new ArrayList<>();
         this.confirmaciones = new ArrayList<>();
         this.estadisticas = new ArrayList<>();
         this.reportes = new ArrayList<>();
         this.rolesObligatorios = new ArrayList<>();
+<<<<<<< HEAD
+
+        this.listaDeEspera = new ArrayList<>(); // <-- ¡Inicializado!
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     }
 
     // --- METODOS DE ACCION "INTELIGENTES" (Patron State) ---
 
+<<<<<<< HEAD
+=======
     /**
      * Metodo base para la transicion de estado.
      */
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     public void setState(IScrimState nuevoEstado) {
         System.out.println("CAMBIO DE ESTADO: De " +
                 (this.estadoActual != null ? this.estadoActual.getClass().getSimpleName() : "null") +
@@ -55,6 +88,23 @@ public class Scrim {
 
     /**
      * Metodo publico para postularse.
+<<<<<<< HEAD
+     * Chequea si el estado actual ES 'IPostulable'.
+     * ¡AHORA AGREGA A LISTA DE ESPERA SI ESTA LLENO!
+     */
+    public void postular(Usuario usuario, Rol rol) {
+        if (estadoActual instanceof IPostulable) {
+            // Si esta Buscando, delega al estado
+            ((IPostulable)estadoActual).postular(this, usuario, rol);
+        } else {
+            // Si el estado no es 'IPostulable' (ej. LobbyArmado, Confirmado),
+            // lo agregamos a la lista de espera (suplentes).
+            System.out.println("SCRIM: El lobby esta lleno. Agregando a " + usuario.getUsername() + " a la lista de espera.");
+            this.listaDeEspera.add(usuario);
+        }
+    }
+
+=======
      * Chequea si el estado actual ES 'IPostulable' antes de actuar.
      */
     public void postular(Usuario usuario, Rol rol) {
@@ -71,6 +121,7 @@ public class Scrim {
      * Metodo publico para confirmar.
      * Chequea si el estado actual ES 'IConfirmable'.
      */
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     public void confirmar(Usuario usuario) {
         if (estadoActual instanceof IConfirmable) {
             ((IConfirmable)estadoActual).confirmar(this, usuario);
@@ -79,10 +130,13 @@ public class Scrim {
         }
     }
 
+<<<<<<< HEAD
+=======
     /**
      * Metodo publico para iniciar.
      * Chequea si el estado actual ES 'IIniciable'.
      */
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     public void iniciar() {
         if (estadoActual instanceof IIniciable) {
             ((IIniciable)estadoActual).iniciar(this);
@@ -91,10 +145,13 @@ public class Scrim {
         }
     }
 
+<<<<<<< HEAD
+=======
     /**
      * Metodo publico para finalizar.
      * Chequea si el estado actual ES 'IFinalizable'.
      */
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     public void finalizar() {
         if (estadoActual instanceof IFinalizable) {
             ((IFinalizable)estadoActual).finalizar(this);
@@ -103,10 +160,13 @@ public class Scrim {
         }
     }
 
+<<<<<<< HEAD
+=======
     /**
      * Metodo publico para cancelar.
      * Chequea si el estado actual ES 'ICancelable'.
      */
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     public void cancelar() {
         if (estadoActual instanceof ICancelable) {
             ((ICancelable)estadoActual).cancelar(this);
@@ -115,6 +175,27 @@ public class Scrim {
         }
     }
 
+<<<<<<< HEAD
+    // ============================================================
+    // ¡¡NUEVO METODO DE ACCION!!
+    // ============================================================
+    /**
+     * Metodo publico para bajarse de un scrim.
+     * Chequea si el estado actual ES 'IBajarseDelScrim'.
+     */
+    public void bajarJugador(Usuario usuario) {
+        if (estadoActual instanceof IBajarseDelScrim) {
+            ((IBajarseDelScrim)estadoActual).bajarJugador(this, usuario);
+        } else {
+            // No te podes bajar de una partida 'EnJuego' o 'Finalizada'
+            throw new UnsupportedOperationException("No te puedes bajar de un Scrim en el estado actual: " + estadoActual.getClass().getSimpleName());
+        }
+    }
+    // ============================================================
+
+
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     // --- GETTERS Y SETTERS ---
 
     public String getId() { return id; }
@@ -159,4 +240,15 @@ public class Scrim {
 
     public List<Rol> getRolesObligatorios() { return rolesObligatorios; }
     public void setRolesObligatorios(List<Rol> rolesObligatorios) { this.rolesObligatorios = rolesObligatorios; }
+<<<<<<< HEAD
+
+    // ============================================================
+    // ¡¡EL GETTER QUE ARREGLA EL ERROR!!
+    // ============================================================
+    public List<Usuario> getListaDeEspera() {
+        return listaDeEspera;
+    }
+    // ============================================================
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 }

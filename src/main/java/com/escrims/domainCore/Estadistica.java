@@ -3,7 +3,11 @@ package com.escrims.domainCore;
 /**
  * Entidad que guarda los resultados y estadisticas
  * de un Usuario en un Scrim finalizado.
+<<<<<<< HEAD
+ * (Requisito: Estadisticas y feedback)
+=======
  [cite_start]* [cite: 98]
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
  */
 public class Estadistica {
 
@@ -12,10 +16,15 @@ public class Estadistica {
     private String kda; // ej: "15/3/10"
     private String observaciones;
 
+<<<<<<< HEAD
+    // Relaciones
+    private Scrim scrim;
+=======
     // Relacion: La estadistica es de un Scrim
     private Scrim scrim;
 
     // Relacion: La estadistica es de un Usuario
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     private Usuario usuario;
 
     public Estadistica(Scrim scrim, Usuario usuario) {

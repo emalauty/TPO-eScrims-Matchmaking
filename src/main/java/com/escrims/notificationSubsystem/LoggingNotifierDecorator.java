@@ -1,6 +1,10 @@
 package com.escrims.notificationSubsystem;
 
+<<<<<<< HEAD
+import java.io.File;
+=======
 import java.io.File; // Import nuevo
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 
 /**
  * Decorador Concreto: Agrega logging.

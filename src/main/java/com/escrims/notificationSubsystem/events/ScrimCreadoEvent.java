@@ -5,7 +5,11 @@ import com.escrims.domainCore.Scrim;
 /**
  * Evento que se publica cuando un Scrim
  * es creado exitosamente.
+<<<<<<< HEAD
+ * (Para el requisito de Alertas )
+=======
  * (Para el requisito de Alertas)
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
  */
 public class ScrimCreadoEvent implements DomainEvent {
 

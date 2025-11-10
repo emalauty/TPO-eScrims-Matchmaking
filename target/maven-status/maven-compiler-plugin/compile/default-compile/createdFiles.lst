@@ -1,4 +1,10 @@
+<<<<<<< HEAD
+com\escrims\infrastructure\InMemoryComentarioRepository.class
 com\escrims\infrastructure\InMemoryUsuarioRepository.class
+com\escrims\notificationSubsystem\SuplenteSubscriber.class
+=======
+com\escrims\infrastructure\InMemoryUsuarioRepository.class
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 com\escrims\application\DatosCreacion.class
 com\escrims\notificationSubsystem\adapters\ICalAdapterImpl.class
 com\escrims\notificationSubsystem\PushNotifier.class
@@ -11,6 +17,10 @@ com\escrims\domainCore\CanceladoState.class
 com\escrims\domainCore\IUsuarioRepository.class
 com\escrims\services\ScrimService.class
 com\escrims\notificationSubsystem\AlertSubscriber.class
+<<<<<<< HEAD
+com\escrims\notificationSubsystem\events\PlazaDisponibleEvent.class
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 com\escrims\notificationSubsystem\events\ScrimCanceladoEvent.class
 com\escrims\notificationSubsystem\events\UsuarioRegistradoEvent.class
 com\escrims\domainCore\IConfirmable.class
@@ -33,6 +43,10 @@ com\escrims\domainCore\LobbyArmadoState.class
 com\escrims\domainCore\ReporteConducta.class
 com\escrims\notificationSubsystem\adapters\SendGridAdapter.class
 com\escrims\application\Token.class
+<<<<<<< HEAD
+com\escrims\application\DatosComentario.class
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 com\escrims\application\MainWindowController$1.class
 com\escrims\services\AsignarRolCommand.class
 com\escrims\domainCore\Postulacion.class
@@ -47,6 +61,10 @@ com\escrims\notificationSubsystem\events\DomainEvent.class
 com\escrims\domainCore\IPostulable.class
 com\escrims\notificationSubsystem\Notificacion.class
 com\escrims\application\DatosConfirmar.class
+<<<<<<< HEAD
+com\escrims\domainCore\Comentario.class
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 com\escrims\domainCore\IFinalizable.class
 com\escrims\services\SwapJugadoresCommand.class
 com\escrims\services\ByLatencyStrategy.class
@@ -60,8 +78,16 @@ com\escrims\notificationSubsystem\ProdNotifierFactory.class
 com\escrims\application\DatosAsignarRol.class
 com\escrims\moderation\BaseModerationHandler.class
 com\escrims\application\DatosEstadisticas.class
+<<<<<<< HEAD
+com\escrims\application\FeedbackWindowController.class
+com\escrims\notificationSubsystem\NotificationSubscriber.class
+com\escrims\domainCore\IComentarioRepository.class
+com\escrims\services\AuthService.class
+com\escrims\application\SearchWindowController.class
+=======
 com\escrims\notificationSubsystem\NotificationSubscriber.class
 com\escrims\services\AuthService.class
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 com\escrims\infrastructure\InMemoryScrimRepository.class
 com\escrims\moderation\HumanModeratorHandler.class
 com\escrims\application\ScrimController.class
@@ -92,3 +118,7 @@ com\escrims\notificationSubsystem\events\ScrimCreadoEvent.class
 com\escrims\services\MatchmakingService.class
 com\escrims\domainCore\ConfirmadoState.class
 com\escrims\services\IScrimCommand.class
+<<<<<<< HEAD
+com\escrims\domainCore\IBajarseDelScrim.class
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588

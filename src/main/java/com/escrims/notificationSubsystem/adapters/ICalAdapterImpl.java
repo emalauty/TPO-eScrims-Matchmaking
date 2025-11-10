@@ -7,9 +7,19 @@ import net.fortuna.ical4j.model.property.CalScale;
 import net.fortuna.ical4j.model.property.ProdId;
 import net.fortuna.ical4j.model.property.Version;
 
+<<<<<<< HEAD
+// ============================================================
+// ¡¡ESTOS SON LOS IMPORTS QUE ARREGLAN EL ERROR!!
+// ============================================================
+import net.fortuna.ical4j.util.UidGenerator;
+import net.fortuna.ical4j.util.RandomUidGenerator; // <-- ¡Usamos este!
+// (Borramos DefaultUidGenerator y UidGeneratorFactory)
+// ============================================================
+=======
 // ¡¡ESTE ES EL GENERADOR CONCRETO QUE DEBE FUNCIONAR!!
 import net.fortuna.ical4j.util.RandomUidGenerator;
 import net.fortuna.ical4j.util.UidGenerator;
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,9 +44,18 @@ public class ICalAdapterImpl implements ICalAdapter {
             String nombreEvento = "Partida de eScrims: " + (scrim.getJuego() != null ? scrim.getJuego() : "Test");
             VEvent eventoScrim = new VEvent(inicio, fin, nombreEvento);
 
+<<<<<<< HEAD
+            // ============================================================
+            // 3. ¡¡ARREGLO DEFINITIVO!! Usamos RandomUidGenerator
+            // ============================================================
+            UidGenerator ug = new RandomUidGenerator();
+            eventoScrim.getProperties().add(ug.generateUid());
+            // ============================================================
+=======
             // 3. ¡¡ARREGLO FINAL!! Usamos la clase CONCRETA RandomUidGenerator
             UidGenerator ug = new RandomUidGenerator();
             eventoScrim.getProperties().add(ug.generateUid());
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 
             // 4. Crear el calendario
             net.fortuna.ical4j.model.Calendar calendario = new net.fortuna.ical4j.model.Calendar();

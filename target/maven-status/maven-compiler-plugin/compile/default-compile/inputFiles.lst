@@ -1,5 +1,9 @@
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\AuthFacade.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\DatosAsignarRol.java
+<<<<<<< HEAD
+C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\DatosComentario.java
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\DatosConfirmar.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\DatosCreacion.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\DatosEstadisticas.java
@@ -8,6 +12,10 @@ C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\appl
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\DatosPostulacion.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\DatosRegistro.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\DatosReporte.java
+<<<<<<< HEAD
+C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\FeedbackWindowController.java
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\FiltrosBusqueda.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\LoginWindowController.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\MainWindowController.java
@@ -16,17 +24,31 @@ C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\appl
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\ReportWindowController.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\ScrimController.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\ScrimFacade.java
+<<<<<<< HEAD
+C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\SearchWindowController.java
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\TestContext.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\application\Token.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\BuscandoState.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\CanceladoState.java
+<<<<<<< HEAD
+C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\Comentario.java
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\Confirmacion.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\ConfirmadoState.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\EnJuegoState.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\Equipo.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\Estadistica.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\FinalizadoState.java
+<<<<<<< HEAD
+C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\IBajarseDelScrim.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\ICancelable.java
+C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\IComentarioRepository.java
+=======
+C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\ICancelable.java
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\IConfirmable.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\IFinalizable.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\IIniciable.java
@@ -41,6 +63,10 @@ C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\doma
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\Rol.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\Scrim.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\domainCore\Usuario.java
+<<<<<<< HEAD
+C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\infrastructure\InMemoryComentarioRepository.java
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\infrastructure\InMemoryScrimRepository.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\infrastructure\InMemoryUsuarioRepository.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\Main.java
@@ -62,6 +88,10 @@ C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\noti
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\notificationSubsystem\EmailNotifier.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\notificationSubsystem\events\DomainEvent.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\notificationSubsystem\events\LobbyCompletoEvent.java
+<<<<<<< HEAD
+C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\notificationSubsystem\events\PlazaDisponibleEvent.java
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\notificationSubsystem\events\ScrimCanceladoEvent.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\notificationSubsystem\events\ScrimConfirmadoEvent.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\notificationSubsystem\events\ScrimCreadoEvent.java
@@ -77,6 +107,10 @@ C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\noti
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\notificationSubsystem\NotificationSubscriber.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\notificationSubsystem\ProdNotifierFactory.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\notificationSubsystem\PushNotifier.java
+<<<<<<< HEAD
+C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\notificationSubsystem\SuplenteSubscriber.java
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\services\AsignarRolCommand.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\services\AuthService.java
 C:\Users\Lautaro\OneDrive\Desktop\MatchmakingUADE\src\main\java\com\escrims\services\ByHistoryStrategy.java

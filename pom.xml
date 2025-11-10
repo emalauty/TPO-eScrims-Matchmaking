@@ -50,6 +50,20 @@
             <version>1.7.32</version>
             <scope>runtime</scope>
         </dependency>
+<<<<<<< HEAD
+        <dependency>
+            <groupId>org.mnode.ical4j</groupId>
+            <artifactId>ical4j</artifactId>
+            <version>3.2.11</version> </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.32</version>
+            <scope>runtime</scope>
+        </dependency>
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 
     </dependencies>
 

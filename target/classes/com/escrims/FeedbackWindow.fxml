@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.Separator?>
+<VBox prefWidth="450.0" spacing="10.0" alignment="CENTER_LEFT"
+      xmlns="http://javafx.com/javafx/19"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.escrims.application.FeedbackWindowController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <Label text="Feedback Post-Partida">
+            <font>
+                <Font name="Arial Bold" size="24.0" />
+            </font>
+        </Label>
+
+        <Label text="1. Selecciona el jugador al que quieres evaluar:" />
+        <ListView fx:id="playerListView" prefHeight="100.0" />
+
+        <Separator />
+
+        <Label text="2. Cargar Estadísticas (para el jugador seleccionado):" />
+        <HBox spacing="10.0">
+            <TextField fx:id="txtKDA" promptText="KDA (ej: 15/3/10)" HBox.hgrow="ALWAYS" />
+            <CheckBox fx:id="chkMVP" text="¿Fue MVP?" />
+        </HBox>
+        <Button onAction="#onGuardarEstadisticasClicked" text="Guardar Estadísticas" maxWidth="Infinity" />
+
+        <Separator />
+
+        <Label text="3. Dejar Rating y Comentario (sobre el jugador):" />
+        <HBox spacing="10.0">
+            <TextField fx:id="txtRating" promptText="Rating (1-5)" prefWidth="80.0" />
+            <TextField fx:id="txtComentario" promptText="Comentario (ej: buen compañero)" HBox.hgrow="ALWAYS" />
+        </HBox>
+        <Button onAction="#onGuardarComentarioClicked" text="Guardar Comentario" maxWidth="Infinity" />
+
+        <Label fx:id="statusLabel" textFill="GREEN" wrapText="true" />
+
+        <Button onAction="#onCerrarClicked" text="Cerrar" maxWidth="Infinity" style="-fx-font-weight: bold; -fx-background-color: #f0f0f0;"/>
+    </children>
+</VBox>

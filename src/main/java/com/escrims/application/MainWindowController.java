@@ -15,7 +15,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+<<<<<<< HEAD
+import javafx.scene.layout.VBox;
+=======
 import javafx.scene.layout.VBox; // Import para el panel de botones
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -24,11 +28,19 @@ import java.net.URL;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
+<<<<<<< HEAD
+import java.util.UUID;
+
+/**
+ * El "Controlador" de la GUI.
+ * ¡AHORA CON EL BOTON "BUSCAR SCRIMS" FUNCIONAL!
+=======
 
 /**
  * El "Controlador" de la GUI.
  * Esta es la version 100% COMPLETA Y FINAL.
  * Maneja Login, State, Kill Feed, Reportes y Perfil.
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
  */
 public class MainWindowController implements Initializable {
 
@@ -39,12 +51,21 @@ public class MainWindowController implements Initializable {
     private Usuario usuarioLogueado;
 
     // --- Componentes GUI ---
+<<<<<<< HEAD
+    @FXML private VBox leftPanelVBox;
+    @FXML private ListView<String> scrimListView;
+    @FXML private Label statusBar;
+    @FXML private TextField txtEmailDePrueba;
+    @FXML private TextArea logPartidaArea;
+    @FXML private Label lblNickname;
+=======
     @FXML private VBox leftPanelVBox; // El panel de botones
     @FXML private ListView<String> scrimListView;
     @FXML private Label statusBar;
     @FXML private TextField txtEmailDePrueba;
     @FXML private TextArea logPartidaArea; // El "Kill Feed"
     @FXML private Label lblNickname; // Para el nombre
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 
     // Botones
     @FXML private Button btnCrearScrim;
@@ -53,12 +74,25 @@ public class MainWindowController implements Initializable {
     @FXML private Button btnIniciar;
     @FXML private Button btnFinalizar;
     @FXML private Button btnReportar;
+<<<<<<< HEAD
+    @FXML private Button btnEditarPerfil;
+
+    // ============================================================
+    // ¡¡EL BOTON QUE FALTABA CONECTAR!!
+    // ============================================================
+    @FXML private Button btnBuscarScrims;
+    // ============================================================
+
+
+
+=======
     @FXML private Button btnEditarPerfil; // El boton nuevo
 
     /**
      * Inyecta el backend en el frontend (llamado por Main.java).
      * Recibe las 3 Fachadas y el Usuario logueado.
      */
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     public void init(ScrimFacade scrimFacade, AuthFacade authFacade,
                      ModerationFacade moderationFacade, Usuario usuarioLogueado) {
 
@@ -67,6 +101,15 @@ public class MainWindowController implements Initializable {
         this.moderationFacade = moderationFacade;
         this.usuarioLogueado = usuarioLogueado;
 
+<<<<<<< HEAD
+        statusBar.setText("Usuario: " + usuarioLogueado.getUsername() + ". Listo.");
+        lblNickname.setText(usuarioLogueado.getUsername());
+        txtEmailDePrueba.setText(usuarioLogueado.getEmail());
+        leftPanelVBox.setDisable(false);
+
+        TestContext.getInstance().setEmailDePrueba(usuarioLogueado.getEmail());
+
+=======
         // --- PERSONALIZACION DE LA GUI (Login) ---
         statusBar.setText("Usuario: " + usuarioLogueado.getUsername() + ". Listo.");
         lblNickname.setText(usuarioLogueado.getUsername());
@@ -79,6 +122,7 @@ public class MainWindowController implements Initializable {
         TestContext.getInstance().setEmailDePrueba(usuarioLogueado.getEmail());
 
         // Listeners
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
         txtEmailDePrueba.textProperty().addListener((obs, oldVal, newVal) -> {
             TestContext.getInstance().setEmailDePrueba(newVal);
         });
@@ -89,6 +133,12 @@ public class MainWindowController implements Initializable {
         });
     }
 
+<<<<<<< HEAD
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        statusBar.setText("Esperando login...");
+        leftPanelVBox.setDisable(true);
+=======
     /**
      * Deshabilita los botones al inicio (esperando el login).
      */
@@ -96,6 +146,7 @@ public class MainWindowController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         statusBar.setText("Esperando login...");
         leftPanelVBox.setDisable(true); // ¡BLOQUEADO!
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     }
 
     // ============================================================
@@ -126,6 +177,51 @@ public class MainWindowController implements Initializable {
         }
     }
 
+<<<<<<< HEAD
+    // ============================================================
+    // ¡¡ESTE ES EL METODO NUEVO QUE CABLEA EL BOTON!!
+    // ============================================================
+    @FXML
+    private void onBuscarScrimsClicked() {
+        if (scrimFacade == null) {
+            statusBar.setText("Error: Backend no conectado.");
+            return;
+        }
+
+        try {
+            // 1. Cargar el "plano" (FXML) de la ventana de busqueda
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/escrims/SearchWindow.fxml"));
+            Parent root = loader.load();
+
+            // 2. Obtener el "electricista" (Controller) de ESA ventana
+            SearchWindowController searchController = loader.getController();
+
+            // 3. ¡INYECCION DE DEPENDENCIAS!
+            searchController.initData(this.scrimFacade);
+
+            // 4. Crear y mostrar la nueva ventana (Stage)
+            Stage popupStage = new Stage();
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.setTitle("Buscar Scrims");
+            popupStage.setScene(new Scene(root));
+
+            statusBar.setText("Mostrando ventana de busqueda...");
+            popupStage.showAndWait(); // Muestra la ventana y espera
+
+            statusBar.setText("Ventana de busqueda cerrada.");
+
+        } catch (IOException e) {
+            statusBar.setText("Error fatal: No se pudo abrir 'SearchWindow.fxml'");
+            e.printStackTrace();
+        } catch (Exception e) {
+            statusBar.setText("Error: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    // ============================================================
+
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     @FXML
     private void onPostularseClicked() {
         String scrimId = getSelectedScrimId();
@@ -134,9 +230,24 @@ public class MainWindowController implements Initializable {
         statusBar.setText("Postulando al Scrim " + scrimId + "...");
 
         try {
+<<<<<<< HEAD
+            Usuario jugadorFalso = new Usuario();
+            String idFalso = UUID.randomUUID().toString().substring(0, 8);
+            jugadorFalso.setUsername("Jugador_Falso_" + idFalso);
+            jugadorFalso.setId(idFalso);
+            jugadorFalso.setEmail("fake_" + idFalso + "@mail.com");
+
+            Rol rolFalso = new Rol("Duelista");
+
+            scrimFacade.postularse(scrimId, jugadorFalso, rolFalso);
+
+            statusBar.setText("Postulacion de " + jugadorFalso.getUsername() + " exitosa.");
+
+=======
             Rol rolFalso = new Rol("Duelista");
             scrimFacade.postularse(scrimId, this.usuarioLogueado, rolFalso);
             statusBar.setText("Postulacion exitosa para " + scrimId + ". Revisa tu mail.");
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
         } catch (Exception e) {
             statusBar.setText("Error: " + e.getMessage());
             e.printStackTrace();
@@ -214,23 +325,58 @@ public class MainWindowController implements Initializable {
     @FXML
     private void onFinalizarClicked() {
         String scrimId = getSelectedScrimId();
+<<<<<<< HEAD
+        if (scrimId == null) {
+            if (scrimListView.getItems().isEmpty()) return;
+            String ultimoItem = scrimListView.getItems().get(scrimListView.getItems().size() - 1);
+            scrimId = ultimoItem.split(" \\| ")[0].replace("ID: ", "");
+        }
+=======
         if (scrimId == null) return;
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
 
         statusBar.setText("Finalizando partida " + scrimId + "...");
 
         try {
             scrimFacade.finalizarScrim(scrimId);
+<<<<<<< HEAD
+            statusBar.setText("Partida " + scrimId + " ha finalizado. Abriendo feedback...");
+
+            Scrim scrimFinalizado = new Scrim();
+            scrimFinalizado.setId(scrimId);
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/escrims/FeedbackWindow.fxml"));
+            Parent root = loader.load();
+            FeedbackWindowController feedbackController = loader.getController();
+            feedbackController.initData(this.scrimFacade, this.usuarioLogueado, scrimFinalizado);
+
+            Stage popupStage = new Stage();
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.setTitle("Cargar Estadisticas y Feedback - " + scrimId);
+            popupStage.setScene(new Scene(root));
+            popupStage.showAndWait();
+
+            statusBar.setText("Feedback guardado.");
+
+        } catch (IOException e) {
+            statusBar.setText("Error fatal: No se pudo abrir 'FeedbackWindow.fxml'");
+            e.printStackTrace();
+=======
             statusBar.setText("Partida " + scrimId + " ha finalizado. Revisa tu mail.");
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
         } catch (Exception e) {
             statusBar.setText("Error: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
+<<<<<<< HEAD
+=======
     // ============================================================
     // METODOS DE ACCION (MODERACION Y PERFIL)
     // ============================================================
 
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     @FXML
     private void onReportarClicked() {
         String scrimId = getSelectedScrimId();
@@ -270,9 +416,12 @@ public class MainWindowController implements Initializable {
         }
     }
 
+<<<<<<< HEAD
+=======
     /**
      * ¡NUEVO METODO PARA EL BOTON "EDITAR PERFIL"!
      */
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     @FXML
     private void onEditarPerfilClicked() {
         if (authFacade == null || usuarioLogueado == null) {
@@ -281,6 +430,14 @@ public class MainWindowController implements Initializable {
         }
 
         try {
+<<<<<<< HEAD
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/escrims/ProfileWindow.fxml"));
+            Parent root = loader.load();
+            ProfileWindowController profileController = loader.getController();
+
+            profileController.initData(this.authFacade, this.usuarioLogueado);
+
+=======
             // 1. Cargar el "plano" (FXML) de la ventana de perfil
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/escrims/ProfileWindow.fxml"));
             Parent root = loader.load();
@@ -293,15 +450,21 @@ public class MainWindowController implements Initializable {
             profileController.initData(this.authFacade, this.usuarioLogueado);
 
             // 4. Crear y mostrar la nueva ventana (Stage)
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
             Stage popupStage = new Stage();
             popupStage.initModality(Modality.APPLICATION_MODAL);
             popupStage.setTitle("Editar Perfil - " + usuarioLogueado.getUsername());
             popupStage.setScene(new Scene(root));
 
             statusBar.setText("Mostrando ventana de perfil...");
+<<<<<<< HEAD
+            popupStage.showAndWait();
+
+=======
             popupStage.showAndWait(); // Muestra la ventana y espera
 
             // 5. Actualizar la GUI principal si los datos cambiaron
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
             lblNickname.setText(this.usuarioLogueado.getUsername());
             statusBar.setText("Perfil actualizado.");
 
@@ -314,10 +477,13 @@ public class MainWindowController implements Initializable {
         }
     }
 
+<<<<<<< HEAD
+=======
     // ============================================================
     // METODO HELPER
     // ============================================================
 
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
     private String getSelectedScrimId() {
         String scrimInfo = scrimListView.getSelectionModel().getSelectedItem();
         if (scrimInfo == null) {

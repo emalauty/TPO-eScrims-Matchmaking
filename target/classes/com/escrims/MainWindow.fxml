@@ -38,6 +38,11 @@
             </Label>
 
             <Button fx:id="btnCrearScrim" onAction="#onCrearScrimClicked" text="1. Crear Scrim (Test)" maxWidth="Infinity" />
+<<<<<<< HEAD
+
+            <Button fx:id="btnBuscarScrims" onAction="#onBuscarScrimsClicked" text="Buscar Scrims" maxWidth="Infinity" />
+=======
+>>>>>>> ad1453e53f104d63332e08304b5af2ec07582588
             <Button fx:id="btnPostularse" onAction="#onPostularseClicked" text="2. Postularse (Test)" maxWidth="Infinity" />
             <Button fx:id="btnConfirmar" onAction="#onConfirmarClicked" text="3. Confirmar Asistencia" maxWidth="Infinity" />
             <Button fx:id="btnIniciar" onAction="#onIniciarClicked" text="4. INICIAR PARTIDA" maxWidth="Infinity" style="-fx-font-weight: bold; -fx-background-color: #aeffb0;" />
